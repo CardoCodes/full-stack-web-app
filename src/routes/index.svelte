@@ -5,7 +5,7 @@
         const res = await fetch("/todos.json");
 
         if(res.ok){
-            const todos = await res.json;
+            const todos = await res.json();
             return{
                 props: { todos }
             }
@@ -20,7 +20,6 @@
 </script>
 
 <script lang="ts">
-    import "../app.css";
     import TodoItem from "$lib/todo-item.svelte";
 
     export let todos: Todo[];
